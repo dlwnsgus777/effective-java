@@ -3,7 +3,11 @@ package item01;
 public interface HelloService {
    String hello();
 
-   static HelloService of(String lang) {
+   default String hi() {
+      return "Hi";
+   }
+
+   private static HelloService of(String lang) {
       if (lang.equals("ko")) {
          return new KoreanHelloService();
       } else {
