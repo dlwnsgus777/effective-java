@@ -1,4 +1,4 @@
-package item01;
+package effective.code.item01;
 
 public enum OrderStatus {
    ORDERED(0), SHIPPED(1), DELIVERED(2);
