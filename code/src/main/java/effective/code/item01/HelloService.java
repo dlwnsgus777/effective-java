@@ -1,4 +1,4 @@
-package item01;
+package effective.code.item01;
 
 public interface HelloService {
    String hello();

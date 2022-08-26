@@ -1,5 +1,4 @@
-import item01.Character;
-import item01.FontFactory;
+package effective.code.item01;
 
 public class HelloWorld {
    public static void main(String[] args) {
