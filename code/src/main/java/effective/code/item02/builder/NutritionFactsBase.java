@@ -8,11 +8,6 @@ public class NutritionFactsBase {
    private final int sodium;        // 선택
    private final int carbohydrate;  // 선택
 
-   public static void main(String[] args) {
-      NutritionFacts nutritionFacts01 = new NutritionFacts(1, 0);
-      NutritionFacts nutritionFacts02 = new NutritionFacts(1, 0, 10);
-   }
-
    public NutritionFactsBase(int servingSize, int servings) {
       this.servingSize  = servingSize;
       this.servings     = servings;

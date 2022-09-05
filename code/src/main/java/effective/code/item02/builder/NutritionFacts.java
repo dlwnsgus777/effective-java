@@ -1,45 +1,46 @@
 package effective.code.item02.builder;
 
 public class NutritionFacts {
-   private final int servingSize;   // 필수
-   private final int servings;      // 필수
-   private final int calories;      // 선택
-   private final int fat;           // 선택
-   private final int sodium;        // 선택
-   private final int carbohydrate;  // 선택
+   private int servingSize    = 1;   // 필수
+   private int servings       = 13;  // 필수
+   private int calories       = 0;  // 선택
+   private int fat            = 0;  // 선택
+   private int sodium         = 0;  // 선택
+   private int carbohydrate   = 0;  // 선택
 
    public static void main(String[] args) {
-      NutritionFacts nutritionFacts01 = new NutritionFacts(1, 0);
-      NutritionFacts nutritionFacts02 = new NutritionFacts(1, 0, 10);
+      NutritionFacts cocaCola = new NutritionFacts(1, 10);
+
+      cocaCola.setServings(240);
+      cocaCola.setCalories(100);
    }
 
    public NutritionFacts(int servingSize, int servings) {
-      this(servingSize, servings, 0);
+      this.servingSize = servingSize;
+      this.servings = servings;
    }
 
-   public NutritionFacts(int servingSize, int servings,
-                         int calories) {
-      this(servingSize, servings, calories, 0);
-   }
-   public NutritionFacts(int servingSize, int servings,
-                         int calories, int fat) {
-      this(servingSize, servings, calories, fat, 0);
+   public void setServingSize(int servingSize) {
+      this.servingSize = servingSize;
    }
 
-   public NutritionFacts(int servingSize, int servings,
-                         int calories, int fat,
-                         int sodium) {
-      this(servingSize, servings, calories, fat, sodium, 0);
+   public void setServings(int servings) {
+      this.servings = servings;
    }
 
-   public NutritionFacts(int servingSize, int servings,
-                         int calories, int fat,
-                         int sodium, int carbohydrate) {
-      this.servingSize  = servingSize;
-      this.servings     = servings;
-      this.calories     = calories;
-      this.fat          = fat;
-      this.sodium       = sodium;
+   public void setCalories(int calories) {
+      this.calories = calories;
+   }
+
+   public void setFat(int fat) {
+      this.fat = fat;
+   }
+
+   public void setSodium(int sodium) {
+      this.sodium = sodium;
+   }
+
+   public void setCarbohydrate(int carbohydrate) {
       this.carbohydrate = carbohydrate;
    }
 }
