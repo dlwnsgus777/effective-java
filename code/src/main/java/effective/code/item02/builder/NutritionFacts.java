@@ -1,46 +1,71 @@
 package effective.code.item02.builder;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+@Builder(builderClassName = "builder")
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class NutritionFacts {
-   private int servingSize    = 1;   // 필수
-   private int servings       = 13;  // 필수
-   private int calories       = 0;  // 선택
-   private int fat            = 0;  // 선택
-   private int sodium         = 0;  // 선택
-   private int carbohydrate   = 0;  // 선택
+   private final int servingSize;
+   private final int servings;
+   private final int calories;
+   private final int fat;
+   private final int sodium;
+   private final int carbohydrate;
 
    public static void main(String[] args) {
-      NutritionFacts cocaCola = new NutritionFacts(1, 10);
-
-      cocaCola.setServings(240);
-      cocaCola.setCalories(100);
+      NutritionFacts cocaCola = new Builder(1, 10)
+            .calories(240).sodium(35).build();
    }
 
-   public NutritionFacts(int servingSize, int servings) {
-      this.servingSize = servingSize;
-      this.servings = servings;
+   public static class Builder {
+      // 필수 매개변수
+      private final int servingSize;
+      private final int servings;
+
+      // 선택 매개변수 - 기본값으로 초기화한다.
+      private int calories      = 0;
+      private int fat           = 0;
+      private int sodium        = 0;
+      private int carbohydrate  = 0;
+
+      public Builder(int servingSize, int servings) {
+         this.servingSize = servingSize;
+         this.servings = servings;
+      }
+
+      public Builder calories(int val) {
+         calories = val;
+         return this;
+      }
+
+      public Builder fat(int val) {
+         fat = val;
+         return this;
+      }
+
+      public Builder sodium(int val) {
+         sodium = val;
+         return this;
+      }
+
+      public Builder carbohydrate(int val) {
+         carbohydrate = val;
+         return this;
+      }
+
+      public NutritionFacts build() {
+         return new NutritionFacts(this);
+      }
    }
 
-   public void setServingSize(int servingSize) {
-      this.servingSize = servingSize;
-   }
-
-   public void setServings(int servings) {
-      this.servings = servings;
-   }
-
-   public void setCalories(int calories) {
-      this.calories = calories;
-   }
-
-   public void setFat(int fat) {
-      this.fat = fat;
-   }
-
-   public void setSodium(int sodium) {
-      this.sodium = sodium;
-   }
-
-   public void setCarbohydrate(int carbohydrate) {
-      this.carbohydrate = carbohydrate;
+   private NutritionFacts(Builder builder) {
+      servingSize  = builder.servingSize;
+      servings     = builder.servings;
+      calories     = builder.calories;
+      fat          = builder.fat;
+      sodium       = builder.sodium;
+      carbohydrate = builder.carbohydrate;
    }
 }
