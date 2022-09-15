@@ -1,6 +1,8 @@
 package effective.code.item03.field;
 
-public class Elvis implements IElvis {
+import java.io.Serializable;
+
+public class Elvis implements IElvis, Serializable {
 
    /**
     * 싱글톤 오브젝트
@@ -17,16 +19,20 @@ public class Elvis implements IElvis {
       created = true;
    }
 
-   public void leaveTheBuilding() {
-      System.out.println("Whoa baby, I'm outta here!");
-   }
-
    public void sing() {
       System.out.println("I'll have a blue~ Christmas without you~");
+   }
+
+   public void leaveTheBuilding() {
+      System.out.println("Whoa baby, I'm outta here!");
    }
 
    public static void main(String[] args) {
       Elvis elvis = Elvis.INSTANCE;
       elvis.leaveTheBuilding();
+   }
+
+   private Object readResolve() {
+      return INSTANCE;
    }
 }
