@@ -4,14 +4,27 @@ package effective.code.item05.dependencyinjection;
 import effective.code.item05.Dictionary;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class SpellChecker {
 
    private final Dictionary dictionary;
 
-   public SpellChecker(Dictionary dictionary) {
-      this.dictionary = dictionary;
+//   public SpellChecker(Dictionary dictionary) {
+//
+//      this.dictionary = dictionary;
+//   }
+
+   public SpellChecker(DictionaryFactory dictionaryFactory) {
+
+      this.dictionary = dictionaryFactory.get();
    }
+
+   public SpellChecker(Supplier<Dictionary> dictionaryFactory) {
+
+      this.dictionary = dictionaryFactory.get();
+   }
+
 
    public boolean isValid(String word) {
       // TODO 여기 SpellChecker 코드
