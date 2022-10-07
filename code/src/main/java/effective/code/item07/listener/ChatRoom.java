@@ -22,6 +22,7 @@ public class ChatRoom {
    }
 
    public List<WeakReference<User>> getUsers() {
+      ChatRoom localChat = new ChatRoom();
       return users;
    }
 }
