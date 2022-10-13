@@ -15,8 +15,16 @@ class AccountTest {
    }
 
    @Test
-   void 푸틴_계정() {
+   void 푸틴_계정() throws InterruptedException {
       Account account = null;
-      account.transfer(BigDecimal.valueOf(10.4),"hello");
+      try {
+         account = new BrokenAccount("푸틴");
+      } catch (Exception e) {
+         System.out.println("이러면?");
+      }
+
+      System.gc();
+
+      Thread.sleep(3000L);
    }
 }

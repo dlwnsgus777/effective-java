@@ -16,4 +16,9 @@ public class Account {
    public void transfer(BigDecimal amount, String to) {
       System.out.printf("transfer %f from %s to %s\n", amount, accountId, to);
    }
+
+   @Override
+   protected void finalize() throws Throwable {
+      super.finalize();
+   }
 }
