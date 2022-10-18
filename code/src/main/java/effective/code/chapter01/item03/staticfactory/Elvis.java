@@ -1,5 +1,7 @@
 package effective.code.chapter01.item03.staticfactory;
 
+import java.util.ArrayList;
+
 public class Elvis implements Singer{
    private static final Elvis INSTANCE = new Elvis();
 
