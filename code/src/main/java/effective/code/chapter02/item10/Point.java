@@ -32,14 +32,6 @@ public class Point {
       System.out.println(points.contains(new Point(1, 2)));
    }
 
-   // 잘못된 코드 - 리스코프 치환 원칙 위배! (59쪽)
-//    @Override public boolean equals(Object o) {
-//        if (o == null || o.getClass() != getClass())
-//            return false;
-//        Point p = (Point) o;
-//        return p.x == x && p.y == y;
-//    }
-
    // 아이템 11 참조
    @Override public int hashCode()  {
       return 31 * x + y;
