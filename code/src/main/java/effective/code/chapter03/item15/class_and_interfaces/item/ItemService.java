@@ -1,6 +1,6 @@
-package effective.code.chapter03.class_and_interfaces.item;
+package effective.code.chapter03.item15.class_and_interfaces.item;
 
-import effective.code.chapter03.class_and_interfaces.member.MemberService;
+import effective.code.chapter03.item15.class_and_interfaces.member.MemberService;
 
 public class ItemService {
 

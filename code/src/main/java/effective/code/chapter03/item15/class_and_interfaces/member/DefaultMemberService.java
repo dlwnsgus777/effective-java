@@ -1,4 +1,4 @@
-package effective.code.chapter03.class_and_interfaces.member;
+package effective.code.chapter03.item15.class_and_interfaces.member;
 
 import java.util.Arrays;
 
