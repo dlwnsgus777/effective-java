@@ -1,6 +1,7 @@
 package effective.code.chapter03.item17.concurrent;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 
 public class ConcurrentExample {
     public static void main(String[] args) throws InterruptedException {
