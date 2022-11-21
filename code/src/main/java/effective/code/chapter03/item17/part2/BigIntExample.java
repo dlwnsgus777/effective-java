@@ -14,6 +14,5 @@ public class BigIntExample {
         final Set<Point> points = new HashSet<>();
         Point firstPoint = new Point(1, 2);
         points.add(firstPoint);
-
     }
 }
