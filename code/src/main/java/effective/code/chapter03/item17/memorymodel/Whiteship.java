@@ -19,6 +19,4 @@ public class Whiteship {
 
         Whiteship whiteship = new Whiteship();
     }
-
-
 }

@@ -2,6 +2,8 @@ package effective.code.chapter03.item17.part1;
 
 public class Address {
 
+
+
     private String zipCode;
 
     private String street;
