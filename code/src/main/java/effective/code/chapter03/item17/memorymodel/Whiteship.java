@@ -1,5 +1,7 @@
 package effective.code.chapter03.item17.memorymodel;
 
+import java.util.Arrays;
+
 public class Whiteship {
 
     private final int x;
@@ -16,7 +18,6 @@ public class Whiteship {
         // whiteship = w
         // w.x = 1
         // w.y = 2
-
         Whiteship whiteship = new Whiteship();
     }
 }
