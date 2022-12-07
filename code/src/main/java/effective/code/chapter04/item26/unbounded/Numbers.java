@@ -1,6 +1,8 @@
 package effective.code.chapter04.item26.unbounded;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Numbers {
@@ -17,6 +19,8 @@ public class Numbers {
     }
 
     public static void main(String[] args) {
+        List<?> test = new ArrayList<>();
+
         System.out.println(Numbers.numElementsInCommon(Set.of(1, 2, 3), Set.of(1, 2)));
     }
 }

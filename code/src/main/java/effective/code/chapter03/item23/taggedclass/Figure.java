@@ -34,7 +34,8 @@ class Figure {
 
     double area() {
         switch(shape) {
-            case RECTANGLE, SQUARE:
+            case SQUARE:
+            case RECTANGLE:
                 return length * width;
             case CIRCLE:
                 return Math.PI * (radius * radius);
