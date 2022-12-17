@@ -1,7 +1,6 @@
 package effective.code.chapter04.item31;
 
-import me.whiteship.chapter05.item31.exmaple.Box;
-import me.whiteship.chapter05.item31.exmaple.IntegerBox;
+import effective.code.chapter04.item31.exmaple.IntegerBox;
 
 import java.util.ArrayList;
 import java.util.List;
