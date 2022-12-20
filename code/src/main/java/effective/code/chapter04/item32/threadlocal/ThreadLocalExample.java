@@ -32,6 +32,5 @@ public class ThreadLocalExample implements Runnable {
 
         System.out.println("Thread Name= " + Thread.currentThread().getName() + " formatter = " + formatter.get().toPattern());
     }
-
 }
 
